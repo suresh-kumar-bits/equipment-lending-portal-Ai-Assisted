@@ -29,6 +29,14 @@ const StudentDashboard = ({ user }) => {
   const [showBorrowModal, setShowBorrowModal] = useState(false);
   const [selectedEquipmentForBorrow, setSelectedEquipmentForBorrow] = useState(null);
   const [borrowQuantity, setBorrowQuantity] = useState(1);
+  const [borrowFromDate, setBorrowFromDate] = useState(() => {
+    const today = new Date();
+    return today.toISOString().slice(0, 10); // yyyy-mm-dd
+  });
+  const [borrowToDate, setBorrowToDate] = useState(() => {
+    const weekFromNow = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
+    return weekFromNow.toISOString().slice(0, 10);
+  });
   const [borrowLoading, setBorrowLoading] = useState(false);
 
   // Pagination state
@@ -101,6 +109,12 @@ const StudentDashboard = ({ user }) => {
    */
   const handleBorrowClick = (equipmentItem) => {
     setSelectedEquipmentForBorrow(equipmentItem);
+    // Reset quantity and default dates when opening modal
+    setBorrowQuantity(1);
+    const today = new Date();
+    setBorrowFromDate(today.toISOString().slice(0, 10));
+    const weekFromNow = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
+    setBorrowToDate(weekFromNow.toISOString().slice(0, 10));
     setShowBorrowModal(true);
   };
 
@@ -113,6 +127,21 @@ const StudentDashboard = ({ user }) => {
 
     try {
       setBorrowLoading(true);
+
+      // Validate dates
+      if (!borrowFromDate || !borrowToDate) {
+        alert('Please select both start and end dates for the borrow period.');
+        setBorrowLoading(false);
+        return;
+      }
+
+      const fromDateObj = new Date(borrowFromDate);
+      const toDateObj = new Date(borrowToDate);
+      if (fromDateObj > toDateObj) {
+        alert('Invalid date range: "From" date must be before or equal to "To" date.');
+        setBorrowLoading(false);
+        return;
+      }
 
       // ============================================================
       // CREATE BORROW REQUEST - SEND TO BACKEND
@@ -128,8 +157,9 @@ const StudentDashboard = ({ user }) => {
         equipmentId: selectedEquipmentForBorrow._id,
         equipmentName: selectedEquipmentForBorrow.name,
         quantity: parseInt(borrowQuantity, 10),
-        borrowFromDate: new Date().toISOString(), // Today
-        borrowToDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(), // 7 days from now
+        // Use selected dates (stored as yyyy-mm-dd). Convert to ISO strings.
+        borrowFromDate: borrowFromDate ? new Date(borrowFromDate).toISOString() : new Date().toISOString(),
+        borrowToDate: borrowToDate ? new Date(borrowToDate).toISOString() : new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(),
         notes: `Requested ${borrowQuantity} ${borrowQuantity === 1 ? 'unit' : 'units'} by ${user.role}`,
       };
       
@@ -461,11 +491,42 @@ const StudentDashboard = ({ user }) => {
                     Select how many items you want to borrow (max: {selectedEquipmentForBorrow.available})
                   </small>
                 </div>
+                
+                  <div className="row g-3 mb-3">
+                    <div className="col-md-6">
+                      <label htmlFor="borrowFrom" className="form-label">
+                        <i className="fa fa-calendar-day me-2"></i>From
+                      </label>
+                      <input
+                        id="borrowFrom"
+                        type="date"
+                        className="form-control"
+                        value={borrowFromDate}
+                        onChange={(e) => setBorrowFromDate(e.target.value)}
+                        disabled={borrowLoading}
+                        min={new Date().toISOString().slice(0, 10)}
+                      />
+                    </div>
 
-                <p className="text-muted">
-                  Are you sure you want to request to borrow {borrowQuantity} {borrowQuantity === 1 ? 'unit' : 'units'} of this equipment? 
-                  An administrator will review your request.
-                </p>
+                    <div className="col-md-6">
+                      <label htmlFor="borrowTo" className="form-label">
+                        <i className="fa fa-calendar-plus me-2"></i>To
+                      </label>
+                      <input
+                        id="borrowTo"
+                        type="date"
+                        className="form-control"
+                        value={borrowToDate}
+                        onChange={(e) => setBorrowToDate(e.target.value)}
+                        disabled={borrowLoading}
+                        min={borrowFromDate}
+                      />
+                    </div>
+                  </div>
+
+                  <p className="text-muted">
+                    Are you sure you want to request to borrow {borrowQuantity} {borrowQuantity === 1 ? 'unit' : 'units'} of this equipment between <strong>{borrowFromDate}</strong> and <strong>{borrowToDate}</strong>? An administrator will review your request.
+                  </p>
               </div>
               <div className="modal-footer border-top">
                 <button

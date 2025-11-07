@@ -486,7 +486,7 @@ const EquipmentManagement = ({ user }) => {
                     </div>
 
                     <div className="col-12 mb-3">
-                      <label className="form-label fw-600 text-dark">Description</label>
+                      <label className="form-label fw-600 text-dark">Description *</label>
                       <textarea
                         className="form-control"
                         name="description"
@@ -515,7 +515,7 @@ const EquipmentManagement = ({ user }) => {
                     </div>
 
                     <div className="col-md-6 mb-3">
-                      <label className="form-label fw-600 text-dark">Location</label>
+                      <label className="form-label fw-600 text-dark">Location *</label>
                       <input
                         type="text"
                         className="form-control"

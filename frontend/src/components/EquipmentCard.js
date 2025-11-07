@@ -95,7 +95,7 @@ const EquipmentCard = ({
           <div className="d-flex align-items-center justify-content-center h-100 text-muted">
             <div className="text-center">
               <i className={`fa ${getCategoryIcon()} fa-3x mb-2`}></i>
-              <p className="small">No image available</p>
+              <p className="small">{equipment.category}</p>
             </div>
           </div>
         )}
@@ -148,12 +148,12 @@ const EquipmentCard = ({
           {/* Borrow Button - For Students/Staff */}
           {(userRole === 'student' || userRole === 'staff') && (
             <button
-              className="btn btn-primary btn-sm flex-grow-1"
+              className={equipment.available <= 0 ? "btn btn-danger btn-sm flex-grow-1": (equipment.available <= 2 ? "btn btn-warning btn-sm flex-grow-1" : "btn btn-success btn-sm flex-grow-1")}
               onClick={() => onBorrow(equipment)}
               disabled={equipment.available <= 0}
               title={equipment.available <= 0 ? 'Equipment not available' : 'Click to borrow'}
             >
-              <i className="fa fa-plus me-1"></i>Borrow
+              <i className="fa fa-plus me-1"></i>{equipment.available <= 0 ? "Not Available": (equipment.available <= 2 ? "Borrow" : "Borrow")}
             </button>
           )}
 
