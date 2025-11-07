@@ -1,0 +1,71 @@
+/* Main App Styling - Using Bootstrap Classes Only */
+
+/* App Container - full viewport layout */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1;
+  background-color: #f8f9fa;
+  padding: 2rem 0;
+}
+
+/* Footer Styling */
+footer {
+  margin-top: auto;
+  border-top: 1px solid #dee2e6;
+}
+
+/* Login Form Styling - using Bootstrap utilities */
+.min-vh-100 {
+  min-height: 100vh;
+}
+
+.rounded-3 {
+  border-radius: 12px;
+}
+
+.form-control-lg,
+.form-select-lg {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+}
+
+.form-control-lg:focus,
+.form-select-lg:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Card Shadow Effect */
+.shadow-lg {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+/* Equipment Card Styling */
+.equipment-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.equipment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.equipment-card .card-img-top {
+  transition: transform 0.3s ease;
+}
+
+.equipment-card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+/* Object Fit for Images */
+.object-fit-cover {
+  object-fit: cover;
+}

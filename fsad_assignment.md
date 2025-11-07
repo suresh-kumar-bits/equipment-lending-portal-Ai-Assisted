@@ -1,0 +1,190 @@
+# SE ZG503 Full Stack Application Development
+
+# Assignment - Web Application Development
+
+**Submission Date:** 10th November 2025  
+**Assignment Submission Mode:** ELearn LMS - File Upload  
+**Weightage:** 25%
+
+## Objective
+
+To design and develop a full-stack web application using React (frontend) and Python/Node.js/Java/.Net (backend) for managing school equipment loans and explore AI-assisted development using tools like GitHub Copilot, Claude, or Cursor.
+
+Students will:
+1. Build a functioning equipment lending system manually
+2. Rebuild or enhance it using AI assistance
+3. Reflect on differences in workflow, quality, and learning outcomes
+
+**Note:** This is a group assignment to be carried out by each group independently.
+
+---
+
+## Problem Statement
+
+### Title: School Equipment Lending Portal
+
+Schools often lend shared items like sports kits, lab equipment, cameras, musical instruments, and project materials to students and staff. Currently, this process is managed manually, leading to missing records and scheduling conflicts.
+
+You are required to build a web-based Equipment Lending Portal to manage and track borrowing requests, approvals, and returns efficiently.
+
+Your task is to build a School Equipment Lending Platform that allows:
+- Students and teachers to request or borrow equipment
+- Lab assistants/admins to approve, issue, and track items
+- Administrators to monitor usage and availability
+
+---
+
+## Core Features
+
+### 1. User Authentication & Roles
+- Login/signup for students, staff, and admins
+- Role-based access (student, staff, admin)
+- Simple token-based login (simulated)
+
+### 2. Equipment Management
+- Add, edit, or delete items (by admin)
+- Each item has a name, category, condition, quantity, and availability
+
+### 3. Borrowing & Return Requests
+- Students can request equipment
+- Staff/admin approves or rejects requests
+- Mark as returned when completed
+- Prevent overlapping bookings for the same item
+
+### 4. Dashboard - Equipment Listing & Search
+- List all available equipment
+- Search/filter by category or availability
+
+### 5. Basic UI & Navigation
+- Responsive React frontend with clear navigation
+
+---
+
+## Additional Enhancements
+
+**Choose ANY ONE of the below based on group members:**
+
+**Note:** A three-member or four-member group should do any one of the additional enhancements. Single member or two-member group will implement only the core features.
+
+- **Due Date Tracking** and automatic overdue notifications
+- **Request History** and usage analytics
+- **Damage/Repair Log** for equipment maintenance
+
+---
+
+## Assignment Expectations
+
+### Phase 1 - Manual Development
+
+#### Backend
+- Implement the APIs required for the problem statement
+- Follow modern web application development practices
+- Use Node.js (or another backend framework of your choice) to handle server-side logic
+- Develop REST APIs or GraphQL APIs to handle CRUD operations with a database
+- Ensure proper routing, URL mapping, and response handling
+- Use any database (SQL/NoSQL) for data storage and retrieval
+
+#### Frontend
+- Design and implement the frontend UI for the problem statement
+- Use a client-side JavaScript framework (React) to build the user interface
+- Design an interactive, user-friendly UI with responsiveness and state management
+- Use modular components and route-based structure in the frontend
+
+#### Integration
+- Integrate the frontend and backend components and demonstrate the capabilities
+- Demonstrate communication between the front end and back end
+
+### Phase 2 - AI-Assisted Development
+
+Use **AI tools** to **rebuild, enhance, or refactor** the system.
+
+Students must use at least one AI-assisted coding tool (Claude, Copilot, or Cursor) and document its usage.
+
+AI use is permitted for:
+- Code generation, debugging, and suggestions
+- Writing API documentation
+- Generating test cases
+
+Follow any of the below approaches:
+- **Option A:** Rebuild from scratch with AI assistance and reflect on the differences
+- **Option B:** Improve/refactor the manual version using AI
+
+---
+
+## Deliverables
+
+### 1. Source Code in GitHub Repository
+Two Versions:
+- Phase 1 - Manual Version
+- Phase 2 - AI Assisted
+
+### 2. Documentation
+- API documentation (can be via Swagger/Postman or markdown)
+- DB schema or model diagrams
+- Architecture, component hierarchy, any assumptions
+- UI/UX wireframes if any
+
+### 3. Demonstration Video of the Working Prototype
+Video recording showing the demonstrations:
+- Demo of both versions (Phase 1 and Phase 2) with explanation of workflow
+
+**Note:** Add it to a Google Drive and submit the link. Do not upload the video to Elearn directly.
+
+### 4. AI Usage Log and Reflection Report
+- Record of prompts, completions, and actions from Copilot/Claude/Cursor
+- Comparison of manual vs AI workflow, benefits, and limitations
+- A short (1-2 pages) report describing:
+  - Which AI tools were used and how
+  - Example prompts used
+  - Parts generated by AI vs. manually coded
+  - Reflection: Did AI help or hinder understanding?
+  - What issues did you encounter integrating AI output?
+  - What did you learn from debugging AI-generated code?
+
+---
+
+## Submission Instructions
+
+1. Upload the complete code to the GitHub repositories. GitHub repository access is to be kept public and open for all evaluators.
+
+2. Upload the Demonstration Video to the Google Drive and keep it accessible to all BITS email IDs.
+
+3. Upload the documentation with the details to the LMS.
+
+4. **AI Policy:**
+
+   **Acceptable AI Uses:**
+   - Generating example code snippets, boilerplate, or documentation
+   - Asking conceptual questions about APIs, syntax, or logic
+   - Code review suggestions or performance tips
+
+   **Unacceptable AI Uses:**
+   - Submitting an end-to-end generated project for Phase 1
+   - Using AI to auto-generate your reflection or log entries
+   - Misrepresenting AI work as your own
+
+5. **Academic Honesty:** You can discuss with peers and refer to the internet to understand the concept better. However, you may not share code with other groups or do a verbatim copy from the Internet/GitHub repositories. Include appropriate references. The code will be tested for plagiarism. If found guilty, no marks will be awarded.
+
+---
+
+## Evaluation Rubric
+
+**Total: 25 Marks**
+
+| Activity | 1 or 2 Member Group | 3 or 4 Member Group |
+|----------|---------------------|---------------------|
+| Backend APIs (CRUD, validation, docs) | 7 | 5 |
+| Frontend UI (navigation, interactivity) | 7 | 5 |
+| Integration | 4 | 3 |
+| Additional Enhancements | Not Required | 5 |
+| AI Usage Log and Reflection | 5 | 5 |
+| Code Quality, GIT commit History, Submission Quality | 2 | 2 |
+
+The relevant documents to be submitted only in the elearn portal. After the completion of deadline, assignment will be evaluated by a group of instructors on the submissions made.
+
+---
+
+## Note
+
+- This is a take-home assignment to be carried out by each group independently
+- In case of any further queries, use discussion forums, or reach out to: akshaya.ganesan@pilani.bits-pilani.ac.in
