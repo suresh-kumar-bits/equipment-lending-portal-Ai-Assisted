@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 // ============================================================
 
 const allowedOrigins = [
-  'https://equipment-lending-portal-Ai-Assisted.vercel.app',
+  'https://equipment-lending-portal-ai-assisted.vercel.app',
   'http://localhost:3000',  // For local development
 ];
 

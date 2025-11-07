@@ -76,7 +76,7 @@ The **Equipment Lending Portal** is a full-stack web application designed to hel
 ## 📁 Project Structure
 
 ```
-equipment-lending-portal-Ai-Assisted/
+equipment-lending-portal-ai-assisted/
 │
 ├── frontend/                          # React Frontend
 │   ├── src/
@@ -147,8 +147,8 @@ equipment-lending-portal-Ai-Assisted/
 
 #### 1. Clone Repository
 ```bash
-git clone https://github.com/yourusername/equipment-lending-portal-Ai-Assisted.git
-cd equipment-lending-portal-Ai-Assisted
+git clone https://github.com/yourusername/equipment-lending-portal-ai-assisted.git
+cd equipment-lending-portal-ai-assisted
 ```
 
 #### 2. Backend Setup
@@ -446,7 +446,7 @@ This project is for educational purposes. All rights reserved.
 
 ## 📞 Contact Information
 
-**Project Repository:**  [https://github.com/suresh-kumar-bits/equipment-lending-portal-Ai-Assisted](https://github.com/suresh-kumar-bits/equipment-lending-portal-Ai-Assisted)
+**Project Repository:**  [https://github.com/suresh-kumar-bits/equipment-lending-portal-ai-assisted](https://github.com/suresh-kumar-bits/equipment-lending-portal-ai-assisted)
 
 **Documentation:** See README.md and testing_document.md  
 **Issue Tracker:** GitHub Issues  
