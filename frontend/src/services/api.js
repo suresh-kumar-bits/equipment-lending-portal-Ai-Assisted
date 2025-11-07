@@ -11,8 +11,9 @@
 // ============================================================
 
 // READ FROM ENVIRONMENT VARIABLE (set in .env or Vercel)
-// const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
-const API_BASE_URL = 'http://localhost:5000';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+// for local development, uncomment below line
+// const API_BASE_URL = 'http://localhost:5000';
 
 console.log('🔧 API Base URL:', API_BASE_URL); // Debug log
 

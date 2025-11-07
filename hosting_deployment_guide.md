@@ -67,7 +67,7 @@ This guide shows you how to host your Equipment Lending Portal for **FREE** and 
    - Connect your GitHub repository
 
 3. **Configure Service**
-   - **Name:** equipment-lending-backend
+   - **Name:** equipment-lending-backend-Ai-Assisted
    - **Environment:** Node
    - **Build Command:** `npm install`
    - **Start Command:** `npm start`
@@ -86,7 +86,7 @@ This guide shows you how to host your Equipment Lending Portal for **FREE** and 
 5. **Deploy**
    - Click "Create Web Service"
    - Wait for deployment (5-10 minutes)
-   - You'll get a URL like: `https://equipment-lending-backend.onrender.com`
+   - You'll get a URL like: `https://equipment-lending-backend-Ai-Assisted.onrender.com`
 
 ✅ **Backend is live!**
 
@@ -110,7 +110,7 @@ This guide shows you how to host your Equipment Lending Portal for **FREE** and 
    - Click "Add New"
    - Select "Project"
    - Select your repository
-   - Choose "equipment-lending-portal" folder
+   - Choose "equipment-lending-portal-Ai-Assisted" folder
 
 3. **Configure Project**
    - **Framework Preset:** Create React App
@@ -121,7 +121,7 @@ This guide shows you how to host your Equipment Lending Portal for **FREE** and 
    - After first deployment fails, go to Project Settings
    - Add Environment Variable:
      ```
-     REACT_APP_API_URL = https://equipment-lending-backend.onrender.com
+     REACT_APP_API_URL = https://equipment-lending-backend-Ai-Assisted.onrender.com
      ```
    - Update `frontend/src/services/api.js`:
      ```javascript
@@ -159,7 +159,7 @@ const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 **File: `frontend/.env` (create if doesn't exist)**
 
 ```
-REACT_APP_API_URL=https://equipment-lending-backend.onrender.com
+REACT_APP_API_URL=https://equipment-lending-backend-Ai-Assisted.onrender.com
 ```
 
 ### Update Backend CORS
@@ -223,7 +223,7 @@ After deployment, you'll have:
 
 ```
 Frontend URL: https://your-frontend.vercel.app
-Backend URL: https://equipment-lending-backend.onrender.com
+Backend URL: https://equipment-lending-backend-Ai-Assisted.onrender.com
 
 Share this link with connections:
 👉 https://your-frontend.vercel.app
