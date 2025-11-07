@@ -187,7 +187,7 @@ const App = () => {
         </main>
 
         {/* Footer */}
-        <footer className="bg-dark text-light text-center py-4 mt-5">
+        <footer className="bg-dark text-light text-center py-4">
           <p className="mb-0">&copy; 2025 School Equipment Lending Portal. All rights reserved.</p>
         </footer>
       </div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { authLogin } from '../services/api';
+import "../styles/auth.css"
 
 /**
  * LoginForm Component
@@ -102,13 +103,13 @@ const LoginForm = ({ onLogin }) => {
   };
 
   return (
-    <div className="min-vh-100 d-flex align-items-center justify-content-center bg-light">
+    <div className="min-vh-100 d-flex align-items-center justify-content-center bg-light auth-page">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-md-6 col-lg-5">
             {/* Login Card */}
             <div className="card shadow-lg border-0 rounded-3">
-              <div className="card-body p-5">
+              <div className="card-body p-4">
                 {/* Header */}
                 <div className="text-center mb-4">
                   <h1 className="h3 fw-bold text-dark mb-2">
@@ -225,11 +226,6 @@ const LoginForm = ({ onLogin }) => {
                 </div>
               </div>
             </div>
-
-            {/* Footer Text */}
-            <p className="text-center text-muted small mt-4">
-              &copy; 2025 School Equipment Lending Portal
-            </p>
           </div>
         </div>
       </div>

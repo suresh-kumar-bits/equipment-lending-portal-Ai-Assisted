@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { clearAuthData } from '../services/api';
 import 'font-awesome/css/font-awesome.min.css';
 
@@ -17,6 +17,7 @@ import 'font-awesome/css/font-awesome.min.css';
 const Navbar = ({ user, onLogout }) => {
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   /**
    * Handle logout functionality
@@ -50,7 +51,7 @@ const Navbar = ({ user, onLogout }) => {
         <>
           <li className="nav-item">
             <Link 
-              className="nav-link text-light" 
+              className={`nav-link ${location.pathname === '/login' ? 'text-warning' : 'text-light'}`}
               to="/login"
               onClick={handleLinkClick}
             >
@@ -59,7 +60,7 @@ const Navbar = ({ user, onLogout }) => {
           </li>
           <li className="nav-item">
             <Link 
-              className="nav-link text-warning" 
+              className={`nav-link ${location.pathname === '/signup' ? 'text-warning' : 'text-light'}`}
               to="/signup"
               onClick={handleLinkClick}
             >
